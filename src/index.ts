@@ -6,6 +6,7 @@ import { json, urlencoded } from "body-parser";
 import { join } from "path";
 
 const PORT = process.env.PORT || 8080;
+console.log(PORT);
 
 // setting up express app
 const app = express();
@@ -20,6 +21,7 @@ app.use("/", express.static(join(__dirname, "..", "..", "views", "build")));
 
 // starts the express app and connects to mongodb
 app.listen(PORT, () => {
+  console.log("started listening on port", PORT);
   connect(process.env.DB_URI!, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
