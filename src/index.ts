@@ -20,7 +20,7 @@ app.use("/topic", topicsRouter);
 app.use("/course", coursesRouter);
 // is in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("./views/build"));
+  app.use(express.static("../../views/build"));
 
   app.get("*", resolve(__dirname, "views", "build", "index.html") as any);
 }
