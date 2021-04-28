@@ -21,6 +21,7 @@ export class SessionValidators {
       res.status(error.statusCode).json(error.error);
       return;
     }
+    console.log("email check done");
     next();
   }
 
@@ -37,6 +38,7 @@ export class SessionValidators {
       res.status(error.statusCode).json(error.error);
       return;
     }
+    console.log("password check done");
     next();
   }
 
@@ -57,6 +59,7 @@ export class SessionValidators {
       res.status(error.statusCode).json(error.error);
       return;
     }
+    console.log("empty registration check done");
     next();
   }
 
