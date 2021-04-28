@@ -22,9 +22,9 @@ userRouter.post(
 
 userRouter.post(
   "/register",
-  SessionValidators.emptyRegistrationForm,
-  SessionValidators.email,
-  SessionValidators.password,
+  // SessionValidators.emptyRegistrationForm,
+  // SessionValidators.email,
+  // SessionValidators.password,
   (req, res) => {
     console.log(req.body);
     UserModel.register({
