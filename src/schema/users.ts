@@ -173,6 +173,7 @@ class UserSchema {
       // there should be no courses and points on the account
       return { ...newUser.info, token, courses: [], points: 0 };
     } catch (error) {
+      console.log(error);
       throw interpolateError(error);
     }
   }
