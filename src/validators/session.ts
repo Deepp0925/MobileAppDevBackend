@@ -78,7 +78,6 @@ export class SessionValidators {
     next: NextFunction
   ) {
     try {
-      console.log(req.body, req.headers.authorization);
       if (!req.body.userId || !isValidObjectId(req.body.userId)) {
         const error = new InvalidEmailError();
         res.status(error.statusCode).json(error.error);

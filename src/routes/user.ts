@@ -26,7 +26,6 @@ userRouter.post(
   SessionValidators.email,
   SessionValidators.password,
   (req, res) => {
-    console.log(req.body);
     UserModel.register({
       email: req.body.email,
       password: req.body.password,
