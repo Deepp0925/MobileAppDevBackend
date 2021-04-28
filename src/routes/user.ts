@@ -26,13 +26,17 @@ userRouter.post(
   SessionValidators.email,
   SessionValidators.password,
   (req, res) => {
+    console.log(req.body);
     UserModel.register({
       email: req.body.email,
       password: req.body.password,
       fullname: req.body.fullname,
     })
       .then((data) => res.json(new Response({ data }).response))
-      .catch((err: BaseError) => res.status(err.statusCode).json(err.error));
+      .catch((err: BaseError) => {
+        console.log(err);
+        res.status(err.statusCode).json(err.error);
+      });
   }
 );
 
